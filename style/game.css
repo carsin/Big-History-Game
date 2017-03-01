@@ -1,0 +1,48 @@
+body {
+	margin: 0;
+	padding: 0;
+	font: 15px/1.5 Arial, Helvetica, sans-serif;
+}
+
+#team-overview .team-box {
+	display: inline-block;
+	width: 25%;
+	float: left;
+	text-align: center;
+	background-color: #A8A8A8;
+	border-bottom: 1px solid black;
+}
+
+#roll-screen {
+	font-size: 24px;
+	clear: both;
+	text-align: center;
+	margin: 0;
+	padding-top: 100px;
+}
+
+#roll-screen h1 {
+	text-align: center;
+}
+
+#roll-screen .rollbox {
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	background-color: #D1D1D1;
+}
+
+#roll-screen .roll-button {
+	padding: 20px;
+	font-size: 20px;
+	border: none;
+	background-color: white;
+	margin-bottom: 20px;
+	transition: 0.3s;
+}
+
+#roll-screen .roll-button:hover {
+	border: none;
+	background-color: #00FF18;
+	transition: 0.3s;
+}
