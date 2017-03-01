@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<title>Game</title>
+</head>
+<body>
+	<div id="group-create">
+		<div id="titles">
+			<h1>Create Groups</h1>	
+			<h2>Group Name</h2>
+			<h2>Population</h2>
+		</div>
+		<form onsubmit="createGroups()" action="game.html" id="create-groups" method="post">
+			<div class="input" id="group1">
+				<input type="text" name="group-name" class="text-input" id="group-name1" placeholder="Group Name 1">
+				<input type="text" name="group-name" class="text-input" id="population-1" placeholder="1000">	
+			</div>
+			<div class="input" id="group2">
+				<input type="text" name="group-name" class="text-input" id="group-name2" placeholder="Group Name 2">
+				<input type="text" name="group-name" class="text-input" id="population-2" placeholder="3000">	
+			</div>
+			<div class="input" id="group3">
+				<input type="text" name="group-name" class="text-input" id="group-name3" placeholder="Group Name 3">
+				<input type="text" name="group-name" class="text-input" id="population-3" placeholder="6000">	
+			</div>
+			<div class="input" id="group4">
+				<input type="text" name="group-name" class="text-input" id="group-name4" placeholder="Group Name 4">
+				<input type="text" name="group-name" class="text-input" id="population-4" placeholder="2000">	
+			</div>
+			<div id="submit-button">
+				<input type="Submit" name="Submit" value="Play!" id="play-button">
+			</div>
+		</form>
+	</div>
+
+	<script src="script/game.js"></script>
+
+</body>
+</html>
