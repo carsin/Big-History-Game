@@ -167,10 +167,6 @@ function play() {
 		currentTurn++; 
 		popRolled = false;
 		invRolled = false;
-		setTimeout(function() {
-			populationRollResult.innerHTML = "N/A";
-			inventionRollResult.innerHTML = "N/A";
-		}, 2000);
 	}
 
 	if (currentTurn > 3) currentTurn = 0;
