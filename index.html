@@ -6,34 +6,37 @@
 	<title>Game</title>
 </head>
 <body>
-	<div id="group-create">
-		<div id="titles">
-			<h1>Create Groups</h1>	
-			<h2>Group Name</h2>
-			<h2>Population</h2>
+	<div class="container">
+		<div id="group-create">
+			<div id="titles">
+				<h1>Create Groups</h1>	
+				<h2>Group Name</h2>
+				<h2>Population</h2>
+			</div>
+			<form action="game.html" id="create-groups" method="get">
+				<div class="input" id="group1">
+					<input type="text" name="n1" class="text-input" id="group-create-name1" placeholder="Group Name 1" required>
+					<input type="number" name="p1" class="text-input" id="population-create-1" placeholder="1000" required>	
+				</div>
+				<div class="input" id="group2">
+					<input type="text" name="n2" class="text-input" id="group-create-name2" placeholder="Group Name 2" required>
+					<input type="number" name="p2" class="text-input" id="population-create-2" placeholder="2000" required>	
+				</div>
+				<div class="input" id="group3">
+					<input type="text" name="n3" class="text-input" id="group-create-name3" placeholder="Group Name 3" required>
+					<input type="number" name="p3" class="text-input" id="population-create-3" placeholder="3000" required>	
+				</div>
+				<div class="input" id="group4">
+					<input type="text" name="n4" class="text-input" id="group-create-name4" placeholder="Group Name 4" required>
+					<input type="number" name="p4" class="text-input" id="population-create-4" placeholder="4000" required>	
+				</div>
+				<div id="submit-button">
+					<input type="Submit" name="henlothere" value="Play!" id="play-button">
+				</div>
+			</form>
 		</div>
-		<form action="game.html" id="create-groups" method="get">
-			<div class="input" id="group1">
-				<input type="text" name="n1" class="text-input" id="group-create-name1" placeholder="Group Name 1" required>
-				<input type="number" name="p1" class="text-input" id="population-create-1" placeholder="1000" required>	
-			</div>
-			<div class="input" id="group2">
-				<input type="text" name="n2" class="text-input" id="group-create-name2" placeholder="Group Name 2" required>
-				<input type="number" name="p2" class="text-input" id="population-create-2" placeholder="2000" required>	
-			</div>
-			<div class="input" id="group3">
-				<input type="text" name="n3" class="text-input" id="group-create-name3" placeholder="Group Name 3" required>
-				<input type="number" name="p3" class="text-input" id="population-create-3" placeholder="3000" required>	
-			</div>
-			<div class="input" id="group4">
-				<input type="text" name="n4" class="text-input" id="group-create-name4" placeholder="Group Name 4" required>
-				<input type="number" name="p4" class="text-input" id="population-create-4" placeholder="4000" required>	
-			</div>
-			<div id="submit-button">
-				<input type="Submit" name="henlothere" value="Play!" id="play-button">
-			</div>
-		</form>
 	</div>
+
 	
 	<!-- TODO: Add footer background image credits-->
 

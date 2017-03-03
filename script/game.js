@@ -1,30 +1,29 @@
-var teamOverviewGroup1 = document.getElementById("group-1");
-var teamOverviewGroup2 = document.getElementById("group-2");
-var teamOverviewGroup3 = document.getElementById("group-3");
-var teamOverviewGroup4 = document.getElementById("group-4");
 
+var teamOverviewGroup1;
+var teamOverviewGroup2;
+var teamOverviewGroup3;
+var teamOverviewGroup4;
 
-var teamOverviewName1 = document.getElementById("group-name1");
-var teamOverviewPopulation1 = document.getElementById("population-1");
-var teamOverviewInvention1 = document.getElementById("invention-1");
+var teamOverviewName1;
+var teamOverviewPopulation1;
+var teamOverviewInvention1;
 
-var teamOverviewName2 = document.getElementById("group-name2");
-var teamOverviewPopulation2 = document.getElementById("population-2");
-var teamOverviewInvention2 = document.getElementById("invention-2");
+var teamOverviewName2;
+var teamOverviewPopulation2;
+var teamOverviewInvention2;
 
-var teamOverviewName3 = document.getElementById("group-name3");
-var teamOverviewPopulation3 = document.getElementById("population-3");
-var teamOverviewInvention3 = document.getElementById("invention-3");
+var teamOverviewName3;
+var teamOverviewPopulation3;
+var teamOverviewInvention3;
 
-var teamOverviewName4 = document.getElementById("group-name4");
-var teamOverviewPopulation4 = document.getElementById("population-4");
-var teamOverviewInvention4 = document.getElementById("invention-4");
+var teamOverviewName4;
+var teamOverviewPopulation4;
+var teamOverviewInvention4;
 
-var currentTurnDisplay = document.getElementById("current-turn");
+var currentTurnDisplay;
 
-var populationRollResult = document.getElementById("result-pop");
-var inventionRollResult = document.getElementById("result-inv");
-
+var populationRollResult;
+var inventionRollResult;
 var gameLoop;
 
 var group1;
@@ -34,13 +33,43 @@ var group4;
 
 var nextTurnCounter = 0;
 var groups = [];
-var currentTurn;
+var currentTurn = 0;
 var playing;
 var popRolled;
 var invRolled;
 var lastClickedSpan;
+var inputVal;
+
+function getElements() {
+	teamOverviewGroup1 = document.getElementById("group-1");
+	teamOverviewGroup2 = document.getElementById("group-2");
+	teamOverviewGroup3 = document.getElementById("group-3");
+	teamOverviewGroup4 = document.getElementById("group-4");
+
+	teamOverviewName1 = document.getElementById("group-name1");
+	teamOverviewPopulation1 = document.getElementById("population-1");
+	teamOverviewInvention1 = document.getElementById("invention-1");
+
+	teamOverviewName2 = document.getElementById("group-name2");
+	teamOverviewPopulation2 = document.getElementById("population-2");
+	teamOverviewInvention2 = document.getElementById("invention-2");
+
+	teamOverviewName3 = document.getElementById("group-name3");
+	teamOverviewPopulation3 = document.getElementById("population-3");
+	teamOverviewInvention3 = document.getElementById("invention-3");
+
+	teamOverviewName4 = document.getElementById("group-name4");
+	teamOverviewPopulation4 = document.getElementById("population-4");
+	teamOverviewInvention4 = document.getElementById("invention-4");
+
+	currentTurnDisplay = document.getElementById("current-turn");
+
+	populationRollResult = document.getElementById("result-pop");
+	inventionRollResult = document.getElementById("result-inv");
+}
 
 function init() {
+	getElements();
 
 	group1 = new Group(getParameterByName("n1"), getParameterByName("p1"));
 	group2 = new Group(getParameterByName("n2"), getParameterByName("p2"));
@@ -59,7 +88,6 @@ function init() {
 	$(".number-view").click(divClicked);
 	$("editable-text").blur(editableTextBlurred);
 
-	currentTurn = 0;
 	playing = true;
 	gameLoop = setInterval(play, 1000/20);
 }
@@ -82,15 +110,30 @@ function editableTextBlurred() {
     viewableText.attr('id', lastClickedSpan);
     viewableText.html(html);
     $(this).replaceWith(viewableText);
-    console.log(viewableText);
-    if (lastClickedSpan === "population-1") group1.population = parseInt($(this).val());
-    if (lastClickedSpan === "invention-1") group1.invention = parseInt($(this).val());
-    if (lastClickedSpan === "population-2") group2.population = parseInt($(this).val());
-    if (lastClickedSpan === "invention-2") group2.invention = parseInt($(this).val());
-    if (lastClickedSpan === "population-3") group3.population = parseInt($(this).val());
-    if (lastClickedSpan === "invention-3") group3.invention = parseInt($(this).val());
-    if (lastClickedSpan === "population-4") group4.population = parseInt($(this).val());
-	if (lastClickedSpan === "invention-4") group4.invention = parseInt($(this).val());
+    if (lastClickedSpan === "population-1") {
+    	group1.population = parseInt(html);	
+    	getElements();
+    } else if (lastClickedSpan === "invention-1") {
+    	group1.invention = parseInt(html);	
+    	getElements();
+	} else if (lastClickedSpan === "population-2") {
+		group2.population = parseInt(html);
+		getElements();
+    } else if (lastClickedSpan === "invention-2") {
+		group2.invention = parseInt(html);
+		getElements();
+	} else if (lastClickedSpan === "population-3") {
+		group3.population = parseInt(html);
+		getElements();
+	} else if (lastClickedSpan === "invention-3") {
+		group3.invention = parseInt(html);
+		getElements();
+	} else if (lastClickedSpan === "population-4") {
+		group4.population = parseInt(html);
+	} else if (lastClickedSpan === "invention-4") {
+		group4.invention = parseInt(html);
+		getElements();	
+	} 
     // setup the click event for this new div
     $(viewableText).click(divClicked);
 }
