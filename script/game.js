@@ -188,15 +188,9 @@ function play() {
 		teamOverviewGroup3.style.backgroundColor = "transparent";
 	}
 	if (popRolled && invRolled) {
-<<<<<<< HEAD
 		nextTurnButton.style.display = "inline-block";
 	} else {
 		nextTurnButton.style.display = "none";
-=======
-		currentTurn++; 
-		popRolled = false;
-		invRolled = false;
->>>>>>> origin/master
 	}
 
 	if (currentTurn > 3) currentTurn = 0;
