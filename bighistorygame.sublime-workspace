@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"invention",
+				"invention"
+			],
+			[
+				"teamOverviewInven",
+				"teamOverviewInvention1"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"teamOverView",
+				"teamOverviewName1"
+			],
+			[
+				"teamOverview",
+				"teamOverviewName1"
+			],
+			[
+				"pop",
+				"population-1\t(game.html)"
+			],
+			[
+				"submit",
+				"submitButton"
+			],
+			[
+				"groupPop",
+				"groupPopulation1"
+			],
+			[
+				"popula",
+				"population-1\t(index.html)"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
 				"width",
 				"width"
 			],
@@ -24,10 +64,28 @@
 	"buffers":
 	[
 		{
+			"file": "game.html",
+			"settings":
+			{
+				"buffer_size": 1969,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1433,
+				"buffer_size": 1713,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/game.css",
+			"settings":
+			{
+				"buffer_size": 958,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -36,15 +94,16 @@
 			"file": "script/game.js",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 7148,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "style/style.css",
+			"file": "style/group.css",
 			"settings":
 			{
-				"buffer_size": 502,
+				"buffer_size": 1173,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -57,10 +116,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 303.0,
-		"last_filter": "remove",
+		"height": 368.0,
+		"last_filter": "install",
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"remove",
 				"Package Control: Remove Package"
@@ -68,10 +131,6 @@
 			[
 				"lint",
 				"SublimeLinter: Lint This View"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"listp",
@@ -156,10 +215,14 @@
 	"expanded_folders":
 	[
 		"/D/Files/Code/Websites/2017/February/Big-History-Game",
-		"/D/Files/Code/Websites/2017/February/Big-History-Game/script"
+		"/D/Files/Code/Websites/2017/February/Big-History-Game/img",
+		"/D/Files/Code/Websites/2017/February/Big-History-Game/script",
+		"/D/Files/Code/Websites/2017/February/Big-History-Game/style"
 	],
 	"file_history":
 	[
+		"/D/Files/Code/Websites/2017/February/Big-History-Game/script/groups.js",
+		"/C/Users/Carson/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
 		"/D/Files/Code/Websites/2017/February/Town-Game/code/script/sprite.js",
 		"/D/Files/Code/Websites/2017/February/Town-Game/code/script/tiles.js",
 		"/D/Files/Code/Websites/2017/February/Town-Game/code/script/main.js",
@@ -236,24 +299,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "game.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1433,
+						"buffer_size": 1969,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								260,
-								260
+								677,
+								677
 							]
 						],
 						"settings":
@@ -261,13 +324,46 @@
 							"auto_complete": false,
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
 							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 388.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								924,
+								924
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 114.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -277,63 +373,96 @@
 			"sheets":
 			[
 				{
-					"buffer": 1,
-					"file": "script/game.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
 					"buffer": 2,
-					"file": "style/style.css",
+					"file": "style/game.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 502,
+						"buffer_size": 958,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								352,
-								352
+								936,
+								929
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
 							"open_with_edit": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "script/game.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7148,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5326,
+								5326
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2649.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "style/group.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								218,
+								23
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -367,7 +496,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.462068965517,
 			1.0
 		],
 		"rows":
@@ -419,7 +548,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

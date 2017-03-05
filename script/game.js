@@ -1,4 +1,3 @@
-
 var teamOverviewGroup1;
 var teamOverviewGroup2;
 var teamOverviewGroup3;
@@ -7,23 +6,28 @@ var teamOverviewGroup4;
 var teamOverviewName1;
 var teamOverviewPopulation1;
 var teamOverviewInvention1;
+var teamOverviewTotal;
 
 var teamOverviewName2;
 var teamOverviewPopulation2;
 var teamOverviewInvention2;
+var teamOverviewTotal;
 
 var teamOverviewName3;
 var teamOverviewPopulation3;
 var teamOverviewInvention3;
+var teamOverviewTotal;
 
 var teamOverviewName4;
 var teamOverviewPopulation4;
 var teamOverviewInvention4;
+var teamOverviewTotal;
 
 var currentTurnDisplay;
 
 var populationRollResult;
 var inventionRollResult;
+var nextTurnButton;
 var gameLoop;
 
 var group1;
@@ -49,23 +53,29 @@ function getElements() {
 	teamOverviewName1 = document.getElementById("group-name1");
 	teamOverviewPopulation1 = document.getElementById("population-1");
 	teamOverviewInvention1 = document.getElementById("invention-1");
+	teamOverviewTotal1 = document.getElementById("total-1");
 
 	teamOverviewName2 = document.getElementById("group-name2");
 	teamOverviewPopulation2 = document.getElementById("population-2");
 	teamOverviewInvention2 = document.getElementById("invention-2");
+	teamOverviewTotal2 = document.getElementById("total-2");
 
 	teamOverviewName3 = document.getElementById("group-name3");
 	teamOverviewPopulation3 = document.getElementById("population-3");
 	teamOverviewInvention3 = document.getElementById("invention-3");
+	teamOverviewTotal3 = document.getElementById("total-3");
 
 	teamOverviewName4 = document.getElementById("group-name4");
 	teamOverviewPopulation4 = document.getElementById("population-4");
 	teamOverviewInvention4 = document.getElementById("invention-4");
+	teamOverviewTotal4 = document.getElementById("total-4");
 
 	currentTurnDisplay = document.getElementById("current-turn");
 
 	populationRollResult = document.getElementById("result-pop");
 	inventionRollResult = document.getElementById("result-inv");
+
+	nextTurnButton = document.getElementById("next-turn-button");
 }
 
 function init() {
@@ -95,7 +105,8 @@ function init() {
 function divClicked() {
 	lastClickedSpan = event.target.id;
     var divHtml = $(this).html();
-    var editableText = $("<textarea/>");
+    var textLength = divHtml.length + 3;
+    var editableText = $('<textarea class="num-edit" rows="1" cols="' + textLength +'">');
     editableText.val(divHtml);
     $(this).replaceWith(editableText);
     editableText.focus();
@@ -110,6 +121,7 @@ function editableTextBlurred() {
     viewableText.attr('id', lastClickedSpan);
     viewableText.html(html);
     $(this).replaceWith(viewableText);
+
     if (lastClickedSpan === "population-1") {
     	group1.population = parseInt(html);	
     	getElements();
@@ -141,36 +153,44 @@ function editableTextBlurred() {
 function play() {
 	teamOverviewPopulation1.innerHTML = group1.population;
 	teamOverviewInvention1.innerHTML = group1.invention;
+	teamOverviewTotal1.innerHTML = group1.total;
 	teamOverviewPopulation2.innerHTML = group2.population;
 	teamOverviewInvention2.innerHTML = group2.invention;
+	teamOverviewTotal2.innerHTML = group2.total;
 	teamOverviewPopulation3.innerHTML = group3.population;
 	teamOverviewInvention3.innerHTML = group3.invention;
+	teamOverviewTotal3.innerHTML = group3.total;
 	teamOverviewPopulation4.innerHTML = group4.population;
 	teamOverviewInvention4.innerHTML = group4.invention;
+	teamOverviewTotal4.innerHTML = group4.total;
 
 	currentTurnDisplay.innerHTML = groups[currentTurn].name;
 
 	if (currentTurn === 0) {
-		teamOverviewGroup1.style.backgroundColor = "#00C92B";
-		teamOverviewGroup4.style.backgroundColor = "#A8A8A8";
+		teamOverviewGroup1.style.backgroundColor = "#00FF18";
+		teamOverviewGroup1.style.color = "black";
+		teamOverviewGroup4.style.color = "#f4f4f4";
+		teamOverviewGroup4.style.backgroundColor = "transparent";
 	} else if (currentTurn === 1) {
-		teamOverviewGroup2.style.backgroundColor = "#00C92B";
-		teamOverviewGroup1.style.backgroundColor = "#A8A8A8";
+		teamOverviewGroup2.style.backgroundColor = "#00FF18";
+		teamOverviewGroup2.style.color = "black";
+		teamOverviewGroup1.style.color = "#f4f4f4";
+		teamOverviewGroup1.style.backgroundColor = "transparent";
 	} else if (currentTurn === 2) {
-		teamOverviewGroup3.style.backgroundColor = "#00C92B";
-		teamOverviewGroup2.style.backgroundColor = "#A8A8A8";
+		teamOverviewGroup3.style.backgroundColor = "#00FF18";
+		teamOverviewGroup3.style.color = "black";
+		teamOverviewGroup2.style.color = "#f4f4f4";
+		teamOverviewGroup2.style.backgroundColor = "transparent";
 	} else if (currentTurn === 3) {
-		teamOverviewGroup4.style.backgroundColor = "#00C92B";
-		teamOverviewGroup3.style.backgroundColor = "#A8A8A8";
+		teamOverviewGroup4.style.backgroundColor = "#00FF18";
+		teamOverviewGroup4.style.color = "black";
+		teamOverviewGroup3.style.color = "#f4f4f4";
+		teamOverviewGroup3.style.backgroundColor = "transparent";
 	}
 	if (popRolled && invRolled) {
-		currentTurn++; 
-		popRolled = false;
-		invRolled = false;
-		setTimeout(function() {
-			populationRollResult.innerHTML = "N/A";
-			inventionRollResult.innerHTML = "N/A";
-		}, 2000);
+		nextTurnButton.style.display = "inline-block";
+	} else {
+		nextTurnButton.style.display = "none";
 	}
 
 	if (currentTurn > 3) currentTurn = 0;
@@ -180,12 +200,19 @@ function play() {
 	}
 }
 
+function nextTurnClick() {
+	currentTurn++; 
+	popRolled = false;
+	invRolled = false;
+}
+
 function populationRoll() {
 	if (!popRolled) {
 		console.log("rollo");
 		var resultPop = Math.floor(Math.random() * 10 * 1000);
 		populationRollResult.innerHTML = resultPop;
 		groups[currentTurn].population += resultPop;
+		groups[currentTurn].updateTotal();
 		popRolled = true;
 	} else {
 		populationRollResult.innerHTML = "You already rolled this!";
@@ -199,6 +226,7 @@ function inventionRoll() {
 		var resultInv = Math.floor(Math.random() * 12 * 1000);
 		inventionRollResult.innerHTML = resultInv;
 		groups[currentTurn].invention += resultInv;
+		groups[currentTurn].updateTotal();
 		invRolled = true;
 	} else {
 		inventionRollResult.innerHTML = "You already rolled this!";
@@ -209,9 +237,15 @@ function Group(name, population) {
 	this.name = name;
 	this.population = parseInt(population);
 	this.invention = 0;
+	this.inventions = [];
 
 	this.init = function() {
 		groups.push(this);
+		this.total = this.population + this.invention;
+	};
+
+	this.updateTotal = function() {
+		this.total = this.population + this.invention;
 	};
 }
 
