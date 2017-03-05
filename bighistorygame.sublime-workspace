@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"next-turn",
+				"next-turn-button\t(game.html)"
+			],
+			[
+				"nextTurn",
+				"nextTurnButton"
+			],
+			[
 				"invention",
 				"invention"
 			],
@@ -64,28 +72,19 @@
 	"buffers":
 	[
 		{
-			"file": "game.html",
-			"settings":
-			{
-				"buffer_size": 1969,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 1713,
+				"buffer_size": 2120,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "style/game.css",
+			"file": "game.html",
 			"settings":
 			{
-				"buffer_size": 958,
+				"buffer_size": 2881,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -94,7 +93,16 @@
 			"file": "script/game.js",
 			"settings":
 			{
-				"buffer_size": 7148,
+				"buffer_size": 8149,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style/game.css",
+			"settings":
+			{
+				"buffer_size": 986,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -116,8 +124,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 368.0,
-		"last_filter": "install",
+		"height": 98.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -221,6 +229,7 @@
 	],
 	"file_history":
 	[
+		"/D/Files/Code/Websites/2017/February/Big-History-Game/index.html",
 		"/D/Files/Code/Websites/2017/February/Big-History-Game/script/groups.js",
 		"/C/Users/Carson/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
 		"/D/Files/Code/Websites/2017/February/Town-Game/code/script/sprite.js",
@@ -260,7 +269,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 157.0,
 		"where_history":
 		[
 		]
@@ -299,24 +308,54 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "game.html",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1969,
+						"buffer_size": 2120,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								677,
-								677
+								695,
+								695
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "game.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2881,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								800,
+								800
 							]
 						],
 						"settings":
@@ -329,38 +368,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1713,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								924,
-								924
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -369,55 +376,24 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 2,
-					"file": "style/game.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 958,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								936,
-								929
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "script/game.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7148,
+						"buffer_size": 8149,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5326,
-								5326
+								6599,
+								6599
 							]
 						],
 						"settings":
@@ -428,10 +404,41 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2649.0,
+						"translation.y": 3268.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "style/game.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 986,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								986,
+								986
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 418.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -447,8 +454,8 @@
 						"selection":
 						[
 							[
-								218,
-								23
+								955,
+								955
 							]
 						],
 						"settings":
@@ -496,7 +503,7 @@
 		"cols":
 		[
 			0.0,
-			0.462068965517,
+			0.464942528735,
 			1.0
 		],
 		"rows":
@@ -548,7 +555,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

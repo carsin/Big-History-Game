@@ -201,7 +201,11 @@ function play() {
 }
 
 function nextTurnClick() {
-	currentTurn++; 
+	currentTurn++;
+	if (currentTurn > 3) {
+		currentTurn = 0;
+	}
+	console.log(currentTurn);
 	popRolled = false;
 	invRolled = false;
 }
