@@ -95,6 +95,7 @@ function init() {
 	teamOverviewName3.innerHTML = group3.name;
 	teamOverviewName4.innerHTML = group4.name;
 
+	$(".title-edit").click(divClicked);
 	$(".number-view").click(divClicked);
 	$("editable-text").blur(editableTextBlurred);
 
@@ -144,7 +145,19 @@ function editableTextBlurred() {
 	} else if (lastClickedSpan === "invention-4") {
 		group4.invention = parseInt(html);
 		getElements();	
-	} 
+	} else if (lastClickedSpan === "group-name1") {
+		group1.name = html;
+		getElements();
+	} else if (lastClickedSpan === "group-name2") {
+		group1.name = html;
+		getElements();
+	} else if (lastClickedSpan === "group-name3") {
+		group1.name = html;
+		getElements();
+	} else if (lastClickedSpan === "group-name4") {
+		group1.name = html;
+		getElements();
+	}
     $(viewableText).click(divClicked);
 }
 
@@ -163,6 +176,8 @@ function play() {
 	teamOverviewTotal4.innerHTML = group4.total;
 
 	currentTurnDisplay.innerHTML = groups[currentTurn].name;
+
+	groups[currentTurn].updateTotal();
 
 	if (currentTurn === 0) {
 		teamOverviewGroup1.style.backgroundColor = "#00FF18";
@@ -214,7 +229,6 @@ function populationRoll() {
 		var resultPop = Math.floor(Math.random() * 10 * 1000);
 		populationRollResult.innerHTML = resultPop;
 		groups[currentTurn].population += resultPop;
-		groups[currentTurn].updateTotal();
 		popRolled = true;
 	} else {
 		populationRollResult.innerHTML = "You already rolled this!";
@@ -228,7 +242,6 @@ function inventionRoll() {
 		var resultInv = Math.floor(Math.random() * 12 * 1000);
 		inventionRollResult.innerHTML = resultInv;
 		groups[currentTurn].invention += resultInv;
-		groups[currentTurn].updateTotal();
 		invRolled = true;
 	} else {
 		inventionRollResult.innerHTML = "You already rolled this!";
