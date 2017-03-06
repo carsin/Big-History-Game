@@ -44,8 +44,9 @@ body {
 }
 
 #group-create #submit-button {
-	text-align: center;
-	margin: 0;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 #group-create #submit-button #play-button {
