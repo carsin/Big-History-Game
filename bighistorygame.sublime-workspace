@@ -75,7 +75,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2120,
+				"buffer_size": 2244,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -84,16 +84,7 @@
 			"file": "game.html",
 			"settings":
 			{
-				"buffer_size": 2881,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "script/game.js",
-			"settings":
-			{
-				"buffer_size": 8149,
+				"buffer_size": 3037,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -102,7 +93,16 @@
 			"file": "style/game.css",
 			"settings":
 			{
-				"buffer_size": 986,
+				"buffer_size": 1043,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "script/game.js",
+			"settings":
+			{
+				"buffer_size": 8052,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -111,7 +111,7 @@
 			"file": "style/group.css",
 			"settings":
 			{
-				"buffer_size": 1173,
+				"buffer_size": 1186,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -124,7 +124,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 98.0,
+		"height": 368.0,
 		"last_filter": "",
 		"selected_items":
 		[
@@ -279,6 +279,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"//",
 			"\t\n",
 			">\n",
 			";\n",
@@ -308,7 +309,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -317,15 +318,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2120,
+						"buffer_size": 2244,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								695,
-								695
+								187,
+								147
 							]
 						],
 						"settings":
@@ -338,7 +339,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -347,15 +348,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2881,
+						"buffer_size": 3037,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								800,
-								800
+								2282,
+								2282
 							]
 						],
 						"settings":
@@ -367,7 +368,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 798.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -381,50 +382,19 @@
 			[
 				{
 					"buffer": 2,
-					"file": "script/game.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8149,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6599,
-								6599
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3268.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "style/game.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 986,
+						"buffer_size": 1043,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								986,
-								986
+								625,
+								625
 							]
 						],
 						"settings":
@@ -435,10 +405,42 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 418.0,
+						"translation.y": 266.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "script/game.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8052,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2037,
+								2037
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Extended (SL).tmTheme",
+							"open_with_edit": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1330.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -447,15 +449,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1173,
+						"buffer_size": 1186,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								955,
-								955
+								406,
+								406
 							]
 						],
 						"settings":
@@ -466,10 +468,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 266.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

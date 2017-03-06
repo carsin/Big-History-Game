@@ -99,7 +99,7 @@ function init() {
 	$("editable-text").blur(editableTextBlurred);
 
 	playing = true;
-	gameLoop = setInterval(play, 1000/20);
+	gameLoop = setInterval(play, 1000/10);
 }
 
 function divClicked() {
@@ -110,7 +110,6 @@ function divClicked() {
     editableText.val(divHtml);
     $(this).replaceWith(editableText);
     editableText.focus();
-    // setup the blur event for this new textarea
     editableText.blur(editableTextBlurred);
 }
 
@@ -146,7 +145,6 @@ function editableTextBlurred() {
 		group4.invention = parseInt(html);
 		getElements();	
 	} 
-    // setup the click event for this new div
     $(viewableText).click(divClicked);
 }
 
