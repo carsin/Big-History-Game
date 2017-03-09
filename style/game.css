@@ -1,15 +1,31 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 html { 
  	background: url(../img/bg.jpg) no-repeat center center fixed; 
  	-webkit-background-size: cover;
  	-moz-background-size: cover;
  	-o-background-size: cover;
  	background-size: cover;
+ 	height: 100%;
 }
 
 body {
 	margin: 0;
 	padding: 0;
 	font: 15px/1.5 "Open Sans", Arial, Helvetica, sans-serif;
+	height: 100%;
+}
+
+#wrap {
+	min-height: 100%;
+}
+
+#main {
+	overflow: auto;
+	padding-bottom: 32px;
 }
 
 #team-overview .team-box {
@@ -19,6 +35,10 @@ body {
 	text-align: center;
 	background-color: transparent;
 	color: #f4f4f4;
+}
+
+#team-overview h2 {
+	margin-bottom: 5px;
 }
 
 #roll-screen {
@@ -64,4 +84,15 @@ body {
 #next-turnbutton {
 	opacity: 100%;
 	transition: 0.2s;
+}
+
+footer {
+	position: relative;
+	margin-top: -32px;
+	height: 32px;
+	clear: both;
+}
+
+#github {
+	float: right;
 }

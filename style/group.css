@@ -1,52 +1,64 @@
 /* Global Variables*/
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 html { 
  	background: url(../img/bg.jpg) no-repeat center center fixed; 
  	-webkit-background-size: cover;
  	-moz-background-size: cover;
  	-o-background-size: cover;
  	background-size: cover;
+ 	height: 100%;
 }
 
 body {
 	margin: 0;
 	padding: 0;
 	font: 15px/1.5 "Open Sans", Arial, Helvetica, sans-serif;
+	height: 100%;
+}
+
+.container {
+	min-height: 100%;
 }
 
 /* Group Create Form */
 
 #group-create {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
+	overflow: auto;
+	padding-bottom: 32px;
 }
 
-#group-create #titles {
-	text-align: center;
+.title {
 	color: white;
+	text-align: center;
+	padding: 0;
+	margin: 0 0 5px 0;
 }
 
-#group-create #titles h2 {
-	margin: 0 30px 0 40px;
+#inputs {
+	text-align: center;
+}
+
+.form-column {
+	margin: 0;
 	padding: 0;
 	display: inline-block;
-}
-
-#group-create #create-groups {
-	text-align: center;
+	clear: both;
 }
 
 #group-create .text-input {
+	display: block;
 	padding: 10px;
-	margin: 0 10px 5px 0;
+	margin: 2px;
 	border: none;
 }
 
 #group-create #submit-button {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+	text-align: center;
 }
 
 #group-create #submit-button #play-button {
@@ -63,3 +75,13 @@ body {
 	transition: 0.3s;
 }
 
+footer {
+	position: relative;
+	margin-top: -32px;
+	height: 32px;
+	clear: both;
+}
+
+#github {
+	float: right;
+}
