@@ -42,6 +42,7 @@ var playing;
 var popRolled;
 var invRolled;
 var lastClickedSpan;
+var lastClickedDiv;
 var inputVal;
 
 function getElements() {
@@ -97,27 +98,44 @@ function init() {
 
 	$(".title-edit").click(divClicked);
 	$(".number-view").click(divClicked);
-	$("editable-text").blur(editableTextBlurred);
+	$(".editable-text").blur(editableTextBlurred);
 
 	playing = true;
 	gameLoop = setInterval(play, 1000/10);
 }
 
+function enterPressed() {
+		$("textarea").keypress(function(e) {
+		if (e.which === 13) {
+			console.log("asdasd");
+			$(this).blur();
+		}
+	});
+}
+
 function divClicked() {
 	lastClickedSpan = event.target.id;
+	lastClickedDiv = $(this);
     var divHtml = $(this).html();
     var textLength = divHtml.length + 3;
     var editableText = $('<textarea class="num-edit" rows="1" cols="' + textLength +'">');
     editableText.val(divHtml);
     $(this).replaceWith(editableText);
     editableText.focus();
+    enterPressed();
     editableText.blur(editableTextBlurred);
 }
 
 function editableTextBlurred() {
     var html = $(this).val();
     var viewableText = $("<span>");
-    viewableText.addClass("number-view");
+    if (lastClickedDiv.hasClass("number-view")) {
+    	viewableText.addClass("number-view");
+    	console.log("mamd");	
+    } else {
+    	console.log("raw");
+    	viewableText.addClass("title-edit");
+    }
     viewableText.attr('id', lastClickedSpan);
     viewableText.html(html);
     $(this).replaceWith(viewableText);
@@ -147,16 +165,12 @@ function editableTextBlurred() {
 		getElements();	
 	} else if (lastClickedSpan === "group-name1") {
 		group1.name = html;
-		getElements();
 	} else if (lastClickedSpan === "group-name2") {
-		group1.name = html;
-		getElements();
+		group2.name = html;
 	} else if (lastClickedSpan === "group-name3") {
-		group1.name = html;
-		getElements();
+		group3.name = html;
 	} else if (lastClickedSpan === "group-name4") {
-		group1.name = html;
-		getElements();
+		group4.name = html;
 	}
     $(viewableText).click(divClicked);
 }
@@ -174,36 +188,32 @@ function play() {
 	teamOverviewPopulation4.innerHTML = group4.population;
 	teamOverviewInvention4.innerHTML = group4.invention;
 	teamOverviewTotal4.innerHTML = group4.total;
-
-	currentTurnDisplay.innerHTML = groups[currentTurn].name;
-
 	groups[currentTurn].updateTotal();
 
 	if (currentTurn === 0) {
+		currentTurnDisplay.innerHTML = groups[currentTurn].name;
 		teamOverviewGroup1.style.backgroundColor = "#00FF18";
 		teamOverviewGroup1.style.color = "black";
 		teamOverviewGroup4.style.color = "#f4f4f4";
 		teamOverviewGroup4.style.backgroundColor = "transparent";
 	} else if (currentTurn === 1) {
+		currentTurnDisplay.innerHTML = groups[currentTurn].name;
 		teamOverviewGroup2.style.backgroundColor = "#00FF18";
 		teamOverviewGroup2.style.color = "black";
 		teamOverviewGroup1.style.color = "#f4f4f4";
 		teamOverviewGroup1.style.backgroundColor = "transparent";
 	} else if (currentTurn === 2) {
+		currentTurnDisplay.innerHTML = groups[currentTurn].name;
 		teamOverviewGroup3.style.backgroundColor = "#00FF18";
 		teamOverviewGroup3.style.color = "black";
 		teamOverviewGroup2.style.color = "#f4f4f4";
 		teamOverviewGroup2.style.backgroundColor = "transparent";
 	} else if (currentTurn === 3) {
+		currentTurnDisplay.innerHTML = groups[currentTurn].name;
 		teamOverviewGroup4.style.backgroundColor = "#00FF18";
 		teamOverviewGroup4.style.color = "black";
 		teamOverviewGroup3.style.color = "#f4f4f4";
 		teamOverviewGroup3.style.backgroundColor = "transparent";
-	}
-	if (popRolled && invRolled) {
-		nextTurnButton.style.display = "inline-block";
-	} else {
-		nextTurnButton.style.display = "none";
 	}
 
 	if (currentTurn > 3) currentTurn = 0;
@@ -218,34 +228,22 @@ function nextTurnClick() {
 	if (currentTurn > 3) {
 		currentTurn = 0;
 	}
-	console.log(currentTurn);
-	popRolled = false;
-	invRolled = false;
+	populationRollResult.innerHTML = "N/A";
+	inventionRollResult.innerHTML = "N/A";
 }
 
 function populationRoll() {
-	if (!popRolled) {
-		console.log("rollo");
-		var resultPop = Math.floor(Math.random() * 10 * 1000);
-		populationRollResult.innerHTML = resultPop;
-		groups[currentTurn].population += resultPop;
-		popRolled = true;
-	} else {
-		populationRollResult.innerHTML = "You already rolled this!";
-	}
-
+	console.log("rollo");
+	var resultPop = Math.floor(Math.random() * 10 * 1000);
+	populationRollResult.innerHTML = resultPop;
+	groups[currentTurn].population += resultPop;
 }
 
 function inventionRoll() {
-	if (!invRolled) {
-		console.log("rollo");
-		var resultInv = Math.floor(Math.random() * 12 * 1000);
-		inventionRollResult.innerHTML = resultInv;
-		groups[currentTurn].invention += resultInv;
-		invRolled = true;
-	} else {
-		inventionRollResult.innerHTML = "You already rolled this!";
-	}
+	console.log("rollo");
+	var resultInv = Math.floor(Math.random() * 12 * 1000);
+	inventionRollResult.innerHTML = resultInv;
+	groups[currentTurn].invention += resultInv;
 }
 
 function Group(name, population) {
